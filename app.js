@@ -50,12 +50,24 @@ app.post('/blogs', function(req, res){
     var data = req.body.blog;
     Blog.create(data, function(err, newBlog){
         if(err){
-            res.render("new")
+            res.render("new");
         }else{
-            res.redirect("/blogs")
+            res.redirect("/blogs");
         }
     });
 });
+
+//Show route
+app.get("/blogs/:id", function(req, res) {
+    Blog.findById(req.params.id, function(err, foundBlog){
+        if(err){
+            res.redirect("/blogs")
+        }else{
+            res.render("show", {blog: foundBlog});
+        }
+    });
+});
+
 
 //Basic setup below ============================================================
 app.get("*", function(req, res){

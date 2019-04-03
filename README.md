@@ -1,19 +1,19 @@
 # Blog App
 
-## Blog Index
+### Blog Index
 * Setup the blog app
 * Create blog model
 * Add Index route and template
 
-## Basic Layout
+### Basic Layout
 * Add Header and Footer Partials
 * Include Sematic UI
 * Add Simple Nav
 
-## Create
+### Create
 * Add NEW route and template
 * Add Create route and template
 
-## Show
+### Show
 * Add SHOW route and template
 * Add Links to SHOW page and style template
