@@ -7,7 +7,7 @@ mongoose.connect('mongodb://localhost:27017/blog_app', { useNewUrlParser: true }
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
-//Basic setup above ======================================================
+//Basic setup above ============================================================
 
 //Mongoose/Model Config
 var blogSchema = new mongoose.Schema({
@@ -40,8 +40,15 @@ app.get("/blogs", function(req, res) {
    
 });
 
+//New Route
+app.get('/blogs/new', function(req, res) {
+    res.render("new");
+});
 
-//Basic setup below ======================================================
+//Create Route
+
+
+//Basic setup below ============================================================
 app.get("*", function(req, res){
     res.send("Error page go back to code");
 });
