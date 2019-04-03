@@ -9,3 +9,11 @@
 * Add Header and Footer Partials
 * Include Sematic UI
 * Add Simple Nav
+
+## Create
+* Add NEW route and template
+* Add Create route and template
+
+## Show
+* Add SHOW route and template
+* Add Links to SHOW page and style template

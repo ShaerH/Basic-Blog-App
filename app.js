@@ -46,7 +46,16 @@ app.get('/blogs/new', function(req, res) {
 });
 
 //Create Route
-
+app.post('/blogs', function(req, res){
+    var data = req.body.blog;
+    Blog.create(data, function(err, newBlog){
+        if(err){
+            res.render("new")
+        }else{
+            res.redirect("/blogs")
+        }
+    });
+});
 
 //Basic setup below ============================================================
 app.get("*", function(req, res){
