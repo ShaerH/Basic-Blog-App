@@ -17,3 +17,8 @@
 ### Show
 * Add SHOW route and template
 * Add Links to SHOW page and style template
+
+### Edit and Update
+* Add Edit route and form
+* Add Update route and form
+* Add Method-Override
