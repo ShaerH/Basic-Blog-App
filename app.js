@@ -68,6 +68,28 @@ app.get("/blogs/:id", function(req, res) {
     });
 });
 
+//Edit route
+app.get("/blogs/:id/edit", function(req, res) {
+    Blog.findById(req.params.id, function(err, foundBlog){
+        if(err){
+            res.redirect("/blogs");
+        }else{
+            res.render("edit", {blog: foundBlog});
+        }
+    });
+});
+
+//Update route
+app.put("/blogs/:id", function(req, res){
+    var id = req.params.id;
+    Blog.findByIdAndUpdate(id,req.body.blog,function(err, updatedBlog){
+        if(err){
+            res.redirect("/blogs");
+        } else {
+          res.redirect("/blogs/"+id);  
+        }
+    })
+});
 
 //Basic setup below ============================================================
 app.get("*", function(req, res){
